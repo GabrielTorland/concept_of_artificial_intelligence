@@ -1,3 +1,4 @@
+from snake import SnakeGame
 import math, random
 
 snake = SnakeGame()
