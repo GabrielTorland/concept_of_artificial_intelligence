@@ -1,7 +1,7 @@
-from snake import SnakeGame
+from ikt111_games import Snake
 import math, random
 
-snake = SnakeGame()
+snake = Snake()
 last_direction = None
 
 
