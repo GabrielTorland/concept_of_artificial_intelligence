@@ -1,3 +1,3 @@
-# Basic-ai-stuff
+# Concept of artificial intelligence
 # Here is the link to the repository that i got snake game from: https://gitlab.com/jtfidje/ikt111/-/tree/master/snake.
 
