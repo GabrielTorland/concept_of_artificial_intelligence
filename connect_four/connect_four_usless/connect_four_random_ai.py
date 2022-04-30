@@ -29,6 +29,7 @@ def calculate_move(board, depth, alpha, moves):
     # Getting the new valid locations.
     valid_columns = game.get_all_valid_cols(board)
     # Sorting with respect to the lowst delta from the middle.
+    # Trying to choose the columns in the middle if possible(same heuristic senarios).
     middle = valid_columns[(math.floor(len(valid_columns)/2))]
     valid_columns.sort(key=lambda x: abs(x-middle))
 

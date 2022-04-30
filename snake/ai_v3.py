@@ -85,8 +85,8 @@ def a_star():
                 if snake.is_legal(current_sequence + [direct]):
 
                     # Adding new node to open list.
-                    open_list.append(Node(pos=pos, parent=node, move=direct, g=(abs(pos[0] - starting_position[0]) +
-                                                                                abs(pos[1] - starting_position[1])),
+                    open_list.append(Node(pos=pos, parent=node, move=direct, g=(abs(pos[0] - apple_position[0]) +
+                                                                                abs(pos[1] - apple_position[1])),
                                           h=(node.h + 1)))
     return [random.choice(directions)]
 

@@ -1,0 +1,13 @@
+dea
+bin
+cmake-build-*
+obj
+venv
+*.db
+*.pyc
+*.swp
+.vscode
+.venv
+*.swo
+*.un~
+test.in

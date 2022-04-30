@@ -1,4 +1,3 @@
-
 from hashlib import new
 from ikt111_games.flappy.bird import Bird
 from ikt111_games.flappy.flappy import Flappy
@@ -6,8 +5,8 @@ from ikt111_games.flappy.utils import generate_random_force
 from ikt111_games.flappy.config import *
 import math, random, time
 
-REPRODUCING_PERCENT = 0.1 # 10 percent.
-MUTATION_PERCENT = 1/MAX_POPULATION 
+REPRODUCING_PROSENT = 0.1
+MUTATION_PROSENT = 1/MAX_POPULATION
 
 game = Flappy()
 
@@ -18,33 +17,17 @@ game = Flappy()
 
 
 # Crossover between two parents in pool to generate new genetation.
-def new_generation(birds, parent_pool, generation_size):
+def new_generation(birds, generation_size):
+    # Birds doing the coitus.
     for i in range(generation_size):
-        # Chosing parents
-        father = random.choice(parent_pool)
-        mother = random.choice(parent_pool)
         birds[i] = Bird()
         for j in range(MAX_LIFE):
-            state = random.uniform(0, 1)
-            # Randomly choosing between fathers genotype and mothers genortype.
-            birds[i].genes[j] = random.choice([father.genes[j], mother.genes[j]])
-            # Random mutation.
-            if state < MUTATION_PERCENT:
-                birds[i].genes[j] = generate_random_force()
-
-
-# Pool for parents with highest fitness score.
-def pool(birds):
-    birds.sort(key=lambda x: x.fitness)
-    length = len(birds)
-    return birds[math.floor(length-length*REPRODUCING_PERCENT)::]
-
+            # Creatring random new genes, default range is -4 to 4 in "generate_random_force".
+            birds[i].genes[j] = generate_random_force()
 
 @game.register_ai
 def super_ai(birds):
-    parent_pool = pool(birds)
-    new_generation(birds, parent_pool, MAX_POPULATION)
-    
+    new_generation(birds, MAX_POPULATION)
     return birds
 
 game.start()
