@@ -1,8 +1,5 @@
 <h1 align="center">Welcome to concept of artificial intelligence 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/concept of artificial intelligence" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/concept of artificial intelligence.svg">
-  </a>
   <a href="https://www.uia.no/en/studieplaner/topic/IKT111-G?year=2021" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
